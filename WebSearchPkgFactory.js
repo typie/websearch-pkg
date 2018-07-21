@@ -1,5 +1,6 @@
-const {AbstractTypiePackage, TypieRowItem, TypieCore} = require('typie-sdk');
+const {AbstractTypiePackage, AppGlobal, TypieRowItem, TypieCore} = require('typie-sdk');
 const {shell} = require('electron');
+const Path = require('path');
 
 class WebSearchPkgFactory extends AbstractTypiePackage {
 
@@ -8,7 +9,7 @@ class WebSearchPkgFactory extends AbstractTypiePackage {
         this.packageName = options.pkgName;
         this.db = options.db;
         this.typie = new TypieCore(this.packageName, this.db);
-        this.iconPath = Path.join(AppGlobal.paths().getPackagesPath(), pkgName, 'icons');
+        this.iconPath = Path.join(AppGlobal.paths().getPackagesPath(), this.packageName, 'icons');
     }
 
     search(obj, callback) {
