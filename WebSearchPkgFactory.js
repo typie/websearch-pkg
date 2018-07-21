@@ -1,6 +1,5 @@
-const {AbstractTypiePackage, TypieRowItem, TypieCore, getPath} = require('typie-sdk');
-const {app, shell} = require('electron');
-const Path = require('path');
+const {AbstractTypiePackage, TypieRowItem, TypieCore} = require('typie-sdk');
+const {shell} = require('electron');
 
 class WebSearchPkgFactory extends AbstractTypiePackage {
 
@@ -9,7 +8,7 @@ class WebSearchPkgFactory extends AbstractTypiePackage {
         this.packageName = options.pkgName;
         this.db = options.db;
         this.typie = new TypieCore(this.packageName, this.db);
-        this.iconPath = getPath('packages/WebSearch/icons/');
+        this.iconPath = Path.join(AppGlobal.paths().getPackagesPath(), pkgName, 'icons');
     }
 
     search(obj, callback) {
@@ -42,7 +41,7 @@ class WebSearchPkgFactory extends AbstractTypiePackage {
     }
 
     getIcon(siteName) {
-        return this.pkgConfig.icon ?  this.iconPath + this.pkgConfig.icon : defaultUrlIco
+        return this.pkgConfig.icon ?  Path.join(this.iconPath, this.pkgConfig.icon) : defaultUrlIco
     }
 }
 module.exports = WebSearchPkgFactory;
