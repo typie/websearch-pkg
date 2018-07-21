@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "typie-sdk": "^1.0.10"
+    "typie-sdk": "^1.0.13"
   },
   "repository": {
     "type": "git",
