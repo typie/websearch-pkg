@@ -9,7 +9,7 @@ class WebSearchPkgFactory extends AbstractTypiePackage {
         this.packageName = options.pkgName;
         this.db = options.db;
         this.typie = new TypieCore(this.packageName, this.db);
-        this.iconPath = Path.join(AppGlobal.paths().getPackagesPath(), this.packageName, 'icons');
+        this.iconPath = Path.join(AppGlobal.paths().getPackagesPath(), 'WebSearch', 'icons');
     }
 
     search(obj, callback) {

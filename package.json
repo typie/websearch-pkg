@@ -1,6 +1,6 @@
 {
   "name": "websearch-pkg",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Typie WebSearch Package",
   "main": "index.js",
   "scripts": {
